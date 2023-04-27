@@ -19,6 +19,7 @@ def astar(board):
     #expand
     while len(frontier) != 0:
         step += 1
+        print(step)
         i = 0
         f_i = depth[0] + heuristic[0]
         for idx in range(len(frontier)):
