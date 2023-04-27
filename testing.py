@@ -1,15 +1,8 @@
 import student_code as sc
 
-test = [3,5,2,4,1,0,7,8,6]
+test = [0,5,2,4,1,3,7,8,6]
 
-sc.print_board(test)
-result = sc.Manhattan_Dist(test)
-tieResult = sc.compute_tie(test)
-print(result)
-print(tieResult)
-print(tieResult+4)
-
-print(sc.move(test, 1))
+print("Original\n")
 sc.print_board(test)
 
 actions = [0, 1, 2, 3]

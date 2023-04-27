@@ -19,7 +19,7 @@ def astar(board):
     #expand
     while len(frontier) != 0:
         step += 1
-        print(step)
+        #print(step)
         i = 0
         f_i = depth[0] + heuristic[0]
         for idx in range(len(frontier)):
@@ -33,7 +33,7 @@ def astar(board):
                     if curr_tie > f_i_tie:
                         i = idx
                         f_i = depth[idx] + heuristic[idx]
-        curr_board = frontier[i]
+        curr_board = frontier[i].copy()
         if heuristic[i] == 0:
             return depth[i], step, path_frontier[i]
         actions = [0, 1, 2, 3]
@@ -60,7 +60,11 @@ def astar(board):
 
         expanded.append(curr_board)
         while curr_board in frontier:
-            frontier.remove(curr_board)
+            m = frontier.index(curr_board)
+            path_frontier.pop(m)
+            frontier.pop(m)
+            heuristic.pop(m)
+            depth.pop(m)
 
 
         
